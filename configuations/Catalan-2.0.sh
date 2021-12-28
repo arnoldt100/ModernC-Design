@@ -28,33 +28,33 @@ export MODERNCPPDESIGN_CMAKE_C_COMPILER=mpicc
 export MODERNCPPDESIGN_INSTALL_PREFIX=${HOME}/sw/ModernCPPDesign
 
 #-----------------------------------------------------
-# Define the moderncppdesign bin directory.                   -
+# Define the moderncppdesign bin directory.          -
 #                                                    -
 #-----------------------------------------------------
 export MODERNCPPDESIGN_INSTALL_BIN_DIRECTORY=${MODERNCPPDESIGN_INSTALL_PREFIX}/bin
 
 #-----------------------------------------------------
-# Define the moderncppdesign include directory.               -
+# Define the moderncppdesign include directory.      -
 #                                                    -
 #-----------------------------------------------------
 export MODERNCPPDESIGN_INSTALL_INCLUDE_DIRECTORY=${MODERNCPPDESIGN_INSTALL_PREFIX}/include
 
 #-----------------------------------------------------
-# Define the moderncppdesign include directory.               -
+# Define the moderncppdesign include directory.      -
 #                                                    -
 #-----------------------------------------------------
 export MODERNCPPDESIGN_INSTALL_LIB_DIRECTORY=${MODERNCPPDESIGN_INSTALL_PREFIX}/lib
 
 #-----------------------------------------------------
-# Define the moderncppdesign boost root path.                 -
+# Define the moderncppdesign boost root path.        -
 #                                                    -
 #-----------------------------------------------------
 export MODERNCPPDESIGN_BOOST_TOP_LEVEL=${BOOST_TOP_LEVEL}
 
 #-----------------------------------------------------
-# This moderncppdesign core configuration must be sourced.    -
-#                                                    -
+# This moderncppdesign core configuration must be    -
+# sourced.                                           -
 #-----------------------------------------------------
-source ${MODERNCPPDESIGN_TOP_LEVEL}/configurations/anansi_core_configurations.sh
+source ${MODERNCPPDESIGN_TOP_LEVEL}/configurations/moderncppdesign_core_configurations.sh
 
 
