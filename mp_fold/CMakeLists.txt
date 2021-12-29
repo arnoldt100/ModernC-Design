@@ -1,10 +1,10 @@
 # This CMakeLists.txt file creates the binary mp_fold
 # To add source files, simply append the appropiate variable
-# __target___header_files or __target___implementation_files.
+# mp_fold_header_files or mp_fold_implementation_files.
 #
-# The target for the library is __target__.
+# The target for the library is mp_fold.
 #
-# The following properties are set for the target __target__.
+# The following properties are set for the target mp_fold.
 #
 #   Property                            Value                                               Description
 #----------------------------------------------------------------------------------------------------------------------------
@@ -53,8 +53,8 @@
     # this variable.                                     -
     #                                                    -
     #-----------------------------------------------------
-    set (__target___header_files
-         <list of header files> )
+    set (mp_fold_header_files
+         header_files/mp_fold.hpp)
 
     #-----------------------------------------------------
     # Here we define the variable                        -
@@ -63,8 +63,8 @@
     # variable.                                          -
     #                                                    -
     #-----------------------------------------------------
-    set (__target___implementation_files
-         <list of implementation files> )
+    set (mp_fold_implementation_files
+         implementation_files/mp_fold.cpp )
 
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 #                                                                 @
@@ -87,7 +87,7 @@ add_library( ${target} STATIC
 #                                                    -
 #-----------------------------------------------------
 target_sources(${target}
-    PRIVATE ${__target___header_files} ${__target___implementation_files} )
+    PRIVATE ${mp_fold_header_files} ${mp_fold_implementation_files} )
 
 #-----------------------------------------------------
 # Add the directory header_files to search for       -
@@ -108,15 +108,10 @@ enable_compile_warnings(${target})
 #                                                    -
 #-----------------------------------------------------
 set_target_properties(${target} PROPERTIES
-                      __target___include ${CMAKE_CURRENT_SOURCE_DIR}/header_files
-                      PUBLIC_HEADER "${__target___header_files}" )
+                      mp_fold_include ${CMAKE_CURRENT_SOURCE_DIR}/header_files
+                      PUBLIC_HEADER "${mp_fold_header_files}" )
 
 install( TARGETS ${target}
          ARCHIVE DESTINATION <where to install library> 
          PUBLIC_HEADER DESTINATION <where to install headers> )
 
-#-----------------------------------------------------
-# Add the subdirectory for creating the unit tests.  -
-#                                                    -
-#-----------------------------------------------------
-add_subdirectory(unit_tests)
