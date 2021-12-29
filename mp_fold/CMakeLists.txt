@@ -74,12 +74,38 @@
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 #-----------------------------------------------------
-# Add the library associated with target             -
-# command_line_arguments.                            -
+# Make available the project cmake modules.          -
 #                                                    -
 #-----------------------------------------------------
-add_library( ${target} STATIC 
-             "")
+include( ${CMAKE_CURRENT_LIST_DIR}/cmake_macros_and_functions/mp_fold_build_prerequisites.cmake )
+include( ${CMAKE_CURRENT_LIST_DIR}/cmake_macros_and_functions/enable_compile_warnings.cmake )
+
+#-----------------------------------------------------
+# Verify that key environmental variables are set.   -
+#                                                    -
+#-----------------------------------------------------
+verify_key_environmental_are_set()
+
+#-----------------------------------------------------
+# Here we define some variables.                     -
+# that are critical for building and deploying.      -
+#-----------------------------------------------------
+set(mp_fold_cmake_cxx_compiler $ENV{MP_FOLD_CMAKE_CXX_COMPILER})
+set(mp_fold_cxx_standard $ENV{MP_FOLD_CXX_STANDARD})
+set(mp_fold_cmake_c_compiler $ENV{MP_FOLD_CMAKE_C_COMPILER})
+set(mp_fold_install_prefix $ENV{MP_FOLD_INSTALL_PREFIX})
+set(mp_fold_install_bin_directory $ENV{MP_FOLD_INSTALL_BIN_DIRECTORY})
+set(mp_fold_install_include_directory $ENV{MP_FOLD_INSTALL_INCLUDE_DIRECTORY})
+set(mp_fold_install_lib_directory $ENV{MP_FOLD_INSTALL_LIB_DIRECTORY})
+
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#                                                                 @
+# Start of section that adds the mp_fold binary target.           @
+#                                                                 @
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+add_executable( ${target}
+                "" )
 
 #-----------------------------------------------------
 #                                                    -
@@ -87,31 +113,22 @@ add_library( ${target} STATIC
 #                                                    -
 #-----------------------------------------------------
 target_sources(${target}
-    PRIVATE ${mp_fold_header_files} ${mp_fold_implementation_files} )
+               PRIVATE ${mp_fold_header_files} ${mp_fold_implementation_files} )
 
-#-----------------------------------------------------
-# Add the directory header_files to search for       -
-# header files.                                      -
-#                                                    -
-#-----------------------------------------------------
+set_target_properties(${target} PROPERTIES
+                      CXX_STANDARD ${mp_fold_cxx_standard} )
+
 target_include_directories(${target} 
-                           PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/header_files )
+                           PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/header_files
+                           PRIVATE ${Boost_INCLUDE_DIR}  )
 
-#-----------------------------------------------------
-# Enable compile warnings.                           -
-#                                                    -
-#-----------------------------------------------------
 enable_compile_warnings(${target})
 
-#-----------------------------------------------------
-# Here we set the properties on target               -
-#                                                    -
-#-----------------------------------------------------
-set_target_properties(${target} PROPERTIES
-                      mp_fold_include ${CMAKE_CURRENT_SOURCE_DIR}/header_files
-                      PUBLIC_HEADER "${mp_fold_header_files}" )
 
-install( TARGETS ${target}
-         ARCHIVE DESTINATION <where to install library> 
-         PUBLIC_HEADER DESTINATION <where to install headers> )
 
+target_link_libraries(${target}
+                      PRIVATE ${Boost_LIBRARIES} )
+
+                  
+install( TARGETS ${target} 
+         RUNTIME DESTINATION ${mp_fold_install_bin_directory} )
