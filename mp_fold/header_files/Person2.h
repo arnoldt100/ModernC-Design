@@ -44,6 +44,7 @@ namespace MCD_MP_FOLD
             virtual ~Person2 ();  // destructor
 
             // ====================  ACCESSORS     =======================================
+            void who_am_i() const;
 
             // ====================  MUTATORS      =======================================
 
