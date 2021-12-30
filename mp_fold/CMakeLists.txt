@@ -56,7 +56,8 @@
     set (mp_fold_header_files
          header_files/mp_fold.hpp
          header_files/Person1.h
-         header_files/Person2.h)
+         header_files/Person2.h
+         header_files/Person3.h)
 
     #-----------------------------------------------------
     # Here we define the variable                        -
@@ -68,7 +69,8 @@
     set (mp_fold_implementation_files
          implementation_files/mp_fold.cpp
          implementation_files/Person1.cpp
-         implementation_files/Person2.cpp )
+         implementation_files/Person2.cpp 
+         implementation_files/Person3.cpp)
 
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 #                                                                 @
