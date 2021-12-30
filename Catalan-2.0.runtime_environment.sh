@@ -2,7 +2,7 @@
 # Define the path to the Anansi top level.           -
 #                                                    -
 #-----------------------------------------------------
-export MODERNCPPDESIGN_TOP_LEVEL='/home/arnoldt/arnolds_eclipse_workspace/ModernC++Design/'
+export MODERNCPPDESIGN_TOP_LEVEL='/home/arnoldt/arnolds_eclipse_workspace/ModernC++Design'
 
 #-----------------------------------------------------
 # Loads the boost library.                           -

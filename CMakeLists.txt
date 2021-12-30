@@ -15,7 +15,7 @@
     # Define the project.                                -
     #                                                    -
     #-----------------------------------------------------
-    project(moderncppdesign)
+    project("ModernCPPDesign")
 
     #-----------------------------------------------------
     # Make available the project cmake modules.          -
@@ -23,7 +23,7 @@
     #-----------------------------------------------------
     include( $ENV{MODERNCPPDESIGN_CMAKE_MODULE_PATH}/moderncppdesign_build_prerequisites.cmake )
     include( $ENV{MODERNCPPDESIGN_CMAKE_MODULE_PATH}/enable_compile_warnings.cmake )
-    include( $ENV{MODERNCPPDESIGN_CMAKE_MODULE_PATH}/enable_compile_warnings.cmake )
+    include( $ENV{MODERNCPPDESIGN_CMAKE_MODULE_PATH}/moderncppdesign_boost.cmake )
     include( ${CMAKE_CURRENT_SOURCE_DIR}/mp_fold/cmake_macros_and_functions/mp_fold_library.cmake )
 
 

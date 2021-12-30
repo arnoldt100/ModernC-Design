@@ -125,7 +125,6 @@ target_include_directories(${target}
 enable_compile_warnings(${target})
 
 
-
 target_link_libraries(${target}
                       PRIVATE ${Boost_LIBRARIES} )
 
