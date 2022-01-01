@@ -57,7 +57,9 @@
          header_files/mp_fold.hpp
          header_files/Person1.h
          header_files/Person2.h
-         header_files/Person3.h)
+         header_files/Person3.h
+         header_files/Jane.hpp
+         header_files/GenerateScatteredHierarchy.hpp)
 
     #-----------------------------------------------------
     # Here we define the variable                        -
@@ -70,7 +72,9 @@
          implementation_files/mp_fold.cpp
          implementation_files/Person1.cpp
          implementation_files/Person2.cpp 
-         implementation_files/Person3.cpp)
+         implementation_files/Person3.cpp
+         implementation_files/Jane.cpp
+         implementation_files/GenerateScatteredHierarchy.cpp)
 
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 #                                                                 @
