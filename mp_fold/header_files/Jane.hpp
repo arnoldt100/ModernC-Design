@@ -10,7 +10,7 @@ class Jane
     public: 
         Jane (); 
     
-        ~Jane(); 
+        virtual ~Jane(); 
 
 };
 
