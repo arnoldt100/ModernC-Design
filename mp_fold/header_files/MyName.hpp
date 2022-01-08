@@ -1,5 +1,5 @@
-#ifndef  Name_INC
-#define  Name_INC
+#ifndef  MyName_INC
+#define  MyName_INC
 
 
 //--------------------------------------------------------//
@@ -20,44 +20,47 @@ namespace MCD_MP_FOLD
 {
 
      // =====================================================================================
-     //        Class:  Name
+     //        Class:  MyName
      //  Description:  
      //  =====================================================================================
     template<typename T>
-    class Name
+    class MyName
     {
         public:
             // ====================  LIFECYCLE     =======================================
 
             //--------------------------------------------------------------------------------------
-            //       Class:  Name
-            //      Method:  Name :: Name
+            //       Class:  MyName
+            //      Method:  MyName :: MyName
             // Description:  
             // 
             //  Parameters: 
             //
             //      Return:
             //--------------------------------------------------------------------------------------
-            Name ()
+            MyName () :
+                aPerson_()
             {
-                this->value_ = T.who_am_i();
+                this->value_ = aPerson_.who_am_i();
             	return;
             }   // constructor
 
 
-            Name (const Name & other)
+            MyName (const MyName & other) :
+                aPerson_(other.aPerson_),
+                value_( other.value_)
             {
-                this->_value = other.value_;
                 return;
             }   // copy constructor
 
-            Name (Name && other)
+            MyName (MyName && other) :
+                aPerson_(std::move(other.aPerson_)),
+                value_(std::move(other.value_))
             {
-                this->_value =  std::move(other.value_);
                 return;
             }   // copy-move constructor
 
-            virtual ~Name ()
+            virtual ~MyName ()
             {
                 return;
             }  // destructor
@@ -68,20 +71,22 @@ namespace MCD_MP_FOLD
 
             // ====================  OPERATORS     =======================================
 
-            Name& operator= ( const Name &other )
+            MyName& operator= ( const MyName &other )
             {
                 if ( this != &other)
                 {
-                    this->_value = other.value_;
+                    this->aPerson_=other.aPerson_;
+                    this->value_ = other.value_;
                 }
                 return *this;
             } // assignment operator
 
-            Name& operator= ( Name && other ) // assignment-move operator
+            MyName& operator= ( MyName && other ) // assignment-move operator
             {
                 if ( this != &other)
                 {
-                    this->_value = std::move(other.value_);
+                    this->aPerson_=std::move(other.aPerson_);
+                    this->value_ = std::move(other.value_);
                 }
                 return *this;
             }
@@ -95,11 +100,12 @@ namespace MCD_MP_FOLD
             // ====================  METHODS       =======================================
 
             // ====================  DATA MEMBERS  =======================================
+            T aPerson_;
             std::string value_;
 
-    }; // -----  end of class Name  -----
+    }; // -----  end of class MyName  -----
 
 
 }; // namespace MCD_MP_FOLD
 
-#endif   // ----- #ifndef Name_INC  ----- 
+#endif   // ----- #ifndef MyName_INC  ----- 

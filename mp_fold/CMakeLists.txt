@@ -59,7 +59,7 @@
          header_files/Person2.h
          header_files/Person3.h
          header_files/Jane.hpp
-         header_files/Name.hpp
+         header_files/MyName.hpp
          header_files/GenerateScatteredHierarchy.hpp)
 
     #-----------------------------------------------------
@@ -75,7 +75,7 @@
          implementation_files/Person2.cpp 
          implementation_files/Person3.cpp
          implementation_files/Jane.cpp
-         implementation_files/Name.cpp
+         implementation_files/MyName.cpp
          implementation_files/GenerateScatteredHierarchy.cpp)
 
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
