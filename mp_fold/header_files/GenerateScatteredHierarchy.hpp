@@ -20,15 +20,16 @@
 namespace MCD_MP_FOLD
 {
 
-     // =====================================================================================
-     //        Class:  GenerateScatteredHierarchy
-     //  Description:  Primary template.
-     //  =====================================================================================
-    template<typename TypeList, template<typename> typename Unit>
-    class GenerateScatteredHierarchy;
-    
-    template<typename... T, template<typename> typename Unit>
-    class GenerateScatteredHierarchy<boost::mp11::mp_list<T...>, Unit>
+    // =====================================================================================
+    //        Class:  GenerateScatteredHierarchy
+    //  Description:  Primary template.
+    //  =====================================================================================
+    //
+   
+   
+    template<template<typename> typename Unit, typename TypeList>
+    // template<template<typename> typename Unit, typename... T>
+    class GenerateScatteredHierarchy 
     {
         public:
             // ====================  LIFECYCLE     =======================================
@@ -47,11 +48,20 @@ namespace MCD_MP_FOLD
                 std::cout << "The Head element is: TBD" << std::endl;
             }   // constructor
 
-            GenerateScatteredHierarchy (const GenerateScatteredHierarchy & other);   // copy constructor
+            GenerateScatteredHierarchy (const GenerateScatteredHierarchy & other)   // copy constructor
+            {
+                return;
+            }
 
-            GenerateScatteredHierarchy (GenerateScatteredHierarchy && other);   // copy-move constructor
+            GenerateScatteredHierarchy (GenerateScatteredHierarchy && other)   // copy-move constructor
+            {
+                return;
+            }
 
-            virtual ~GenerateScatteredHierarchy ();  // destructor
+            virtual ~GenerateScatteredHierarchy ()  // destructor
+            {
+                return;
+            }
 
             // ====================  ACCESSORS     =======================================
 
@@ -59,9 +69,23 @@ namespace MCD_MP_FOLD
 
             // ====================  OPERATORS     =======================================
 
-            GenerateScatteredHierarchy& operator= ( const GenerateScatteredHierarchy &other ); // assignment operator
+            GenerateScatteredHierarchy& operator= ( const GenerateScatteredHierarchy &other ) // assignment operator
+            {
+                if ( this != &other )
+                {
 
-            GenerateScatteredHierarchy& operator= ( GenerateScatteredHierarchy && other ); // assignment-move operator
+                }
+                return *this;
+            }
+
+            GenerateScatteredHierarchy& operator= ( GenerateScatteredHierarchy && other ) // assignment-move operator
+            {
+                if ( this != &other )
+                {
+
+                }
+                return *this;
+            }
 
         protected:
             // ====================  METHODS       =======================================
