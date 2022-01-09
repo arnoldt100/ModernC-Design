@@ -7,6 +7,7 @@
 //-------------------- System includes -------------------//
 //--------------------------------------------------------//
 #include <iostream>
+#include <typeinfo>
 
 //--------------------------------------------------------//
 //-------------------- External Library Files ------------//
@@ -26,10 +27,9 @@ namespace MCD_MP_FOLD
     //  =====================================================================================
     //
    
-   
     template<template<typename> typename Unit, typename TypeList>
-    // template<template<typename> typename Unit, typename... T>
-    class GenerateScatteredHierarchy 
+    class GenerateScatteredHierarchy : public boost::mp11::mp_front<TypeList>,
+                                       public boost::mp11::mp_pop_front<TypeList>
     {
         public:
             // ====================  LIFECYCLE     =======================================
@@ -45,7 +45,8 @@ namespace MCD_MP_FOLD
             //--------------------------------------------------------------------------------------
             GenerateScatteredHierarchy ()
             {
-                std::cout << "The Head element is: TBD" << std::endl;
+                std::cout << "The Typelist element is: TBD" << typeid(this->my_typelist_).name()  << std::endl;
+                this->who_am_i();
             }   // constructor
 
             GenerateScatteredHierarchy (const GenerateScatteredHierarchy & other)   // copy constructor
@@ -96,6 +97,7 @@ namespace MCD_MP_FOLD
             // ====================  METHODS       =======================================
 
             // ====================  DATA MEMBERS  =======================================
+            TypeList my_typelist_;
 
     }; // -----  end of class GenerateScatteredHierarchy  -----
 
