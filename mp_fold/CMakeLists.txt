@@ -63,7 +63,8 @@
          header_files/MyName.hpp
          header_files/DefaultPersonFactory.hpp
          header_files/AbstractPersonFactory.hpp
-         header_files/GenerateScatteredHierarchy.hpp)
+         header_files/GenerateScatteredHierarchy.hpp
+         header_files/GenerateLinearHierarchy.hpp)
 
     #-----------------------------------------------------
     # Here we define the variable                        -
@@ -80,7 +81,8 @@
          implementation_files/Jane.cpp
          implementation_files/DefaultPersonFactory.cpp
          implementation_files/AbstractPersonFactory.cpp
-         implementation_files/GenerateScatteredHierarchy.cpp)
+         implementation_files/GenerateScatteredHierarchy.cpp
+         implementation_files/GenerateLinearHierarchy.cpp)
 
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 #                                                                 @
