@@ -13,7 +13,7 @@
 #include <iostream>
 #include <typeinfo>
 #include "MPLAliases.hpp"
-#include "AbstractPersonFactory"
+#include "AbstractPersonFactory.hpp"
 
 using Person_type_list = MCD_MP_FOLD::mpl_typelist<MCD_MP_FOLD::Person1,
                                                    MCD_MP_FOLD::Person2,
@@ -23,5 +23,9 @@ using People3Factory = MCD_MP_FOLD::AbstractPersonFactory<Person_type_list>;
 
 int main (int argc, char** argv)
 {
+    People3Factory* p = new People3Factory;
+
+    delete p;
+
     return 0;
 }

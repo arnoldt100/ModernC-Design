@@ -18,18 +18,20 @@
 //--------------------------------------------------------//
 #include "MPLAliases.hpp"
 #include "DefaultPersonFactory.hpp"
+#include "GenerateScatteredHierarchy.hpp"
 
 namespace MCD_MP_FOLD
 {
 
+     //class AbstractPersonFactory : public MCD_MP_FOLD::GenerateScatteredHierarchy <Unit,mpl_size<L>,L>
      // =====================================================================================
      //        Class:  AbstractPersonFactory
      //  Description:  
      //  =====================================================================================
-     template <template <typename> typename Unit=DefaultPersonFactory,
-               typename L>
-    class AbstractPersonFactory : public MCD_MP_FOLD::GenerateScatteredHierarchy <Unit,mpl_size<L>,L>
-    {
+     template <typename L,
+              template <typename> typename Unit=DefaultPersonFactory>
+     class AbstractPersonFactory : public MCD_MP_FOLD::GenerateScatteredHierarchy <Unit,mpl_size<L>,L>
+     {
         public:
             // ====================  LIFECYCLE     =======================================
 
@@ -66,11 +68,11 @@ namespace MCD_MP_FOLD
             // ====================  ACCESSORS     =======================================
 
             // ====================  MUTATORS      =======================================
-            template<typename T> T* Create()
-            {
-                Unit<T>& unit = *this;
-                return unit.DoCreate(mpl_type2type<T>());
-            }
+            // template<typename T> T* Create()
+            // {
+            //     Unit<T>& unit = *this;
+            //     return unit.DoCreate(mpl_type2type<T>());
+            // }
 
             // ====================  OPERATORS     =======================================
 

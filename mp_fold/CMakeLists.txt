@@ -61,6 +61,7 @@
          header_files/Person3.h
          header_files/Jane.hpp
          header_files/MyName.hpp
+         header_files/DefaultPersonFactory.hpp
          header_files/AbstractPersonFactory.hpp
          header_files/GenerateScatteredHierarchy.hpp)
 
@@ -77,6 +78,7 @@
          implementation_files/Person2.cpp 
          implementation_files/Person3.cpp
          implementation_files/Jane.cpp
+         implementation_files/DefaultPersonFactory.cpp
          implementation_files/AbstractPersonFactory.cpp
          implementation_files/GenerateScatteredHierarchy.cpp)
 
