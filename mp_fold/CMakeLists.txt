@@ -54,6 +54,7 @@
     #                                                    -
     #-----------------------------------------------------
     set (mp_fold_header_files
+         header_files/MPLAliases.hpp
          header_files/mp_fold.hpp
          header_files/Person1.h
          header_files/Person2.h

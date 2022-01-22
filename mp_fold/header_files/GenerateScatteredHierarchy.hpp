@@ -17,26 +17,7 @@
 //--------------------------------------------------------//
 //--------------------- Package includes -----------------//
 //--------------------------------------------------------//
-
-//-----------------------------------------------------
-//  Below we define aliases to boost mp11 meta        -
-//  programming library.                              -
-//                                                    -
-//-----------------------------------------------------
-template<typename ...T>
-using mpl_typelist = boost::mp11::mp_list<T...>;
-
-template<typename L>
-using mpl_size = boost::mp11::mp_size<L>;
-
-template<typename L>
-using mpl_rest_size = boost::mp11::mp_size< boost::mp11::mp_rest<L> >;
-
-template<typename L>
-using mpl_rest = boost::mp11::mp_rest<L>;
-
-template<typename L>
-using mpl_front = boost::mp11::mp_front<L>;
+#include <MPLAliases.hpp>
 
 namespace MCD_MP_FOLD
 {
@@ -70,7 +51,6 @@ namespace MCD_MP_FOLD
                 std::cout << "The Typelist element is: " << typeid(this->my_typelist_).name() << std::endl;
                 std::cout << "The head is: " << typeid(Unit<boost::mp11::mp_front<L>>).name() << std::endl;
                 std::cout << "The tail is: " << typeid(boost::mp11::mp_rest<L>).name() << std::endl;
-                // this->show_my_name();
                 std::cout << "---" << std::endl << std::endl;
             }   // constructor
 
