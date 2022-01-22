@@ -18,6 +18,9 @@
 //--------------------- Package includes -----------------//
 //--------------------------------------------------------//
 
+tenplate<typename T>
+using mp_rest_size = boost::mp11::mp_size< boost::mp11::mp_rest<T> >
+
 namespace MCD_MP_FOLD
 {
 
@@ -27,9 +30,9 @@ namespace MCD_MP_FOLD
     //  =====================================================================================
     //
    
-    template<template<typename> typename Unit, typename TypeList>
-    class GenerateScatteredHierarchy : public boost::mp11::mp_front<TypeList>,
-                                       public boost::mp11::mp_pop_front<TypeList>
+    template<template<typename> typename Unit, typename TypeListSize ,typename TypeList>
+    class GenerateScatteredHierarchy : public Unit<boost::mp11::mp_front<TypeList>>,
+                                       public boost::mp11::mp_rest<TypeList>
     {
         public:
             // ====================  LIFECYCLE     =======================================
@@ -45,8 +48,12 @@ namespace MCD_MP_FOLD
             //--------------------------------------------------------------------------------------
             GenerateScatteredHierarchy ()
             {
-                std::cout << "The Typelist element is: TBD" << typeid(this->my_typelist_).name()  << std::endl;
-                this->who_am_i();
+                std::cout << "---" << std::endl;
+                std::cout << "The Typelist element is: " << typeid(this->my_typelist_).name() << std::endl;
+                std::cout << "The head is: " << typeid(Unit<boost::mp11::mp_front<TypeList>>).name() << std::endl;
+                std::cout << "The tail is: " << typeid(boost::mp11::mp_rest<TypeList>).name() << std::endl;
+                this->show_my_name();
+                std::cout << "---" << std::endl << std::endl;
             }   // constructor
 
             GenerateScatteredHierarchy (const GenerateScatteredHierarchy & other)   // copy constructor
@@ -101,6 +108,19 @@ namespace MCD_MP_FOLD
 
     }; // -----  end of class GenerateScatteredHierarchy  -----
 
+
+    template<template<typename> typename Unit, typename TypeList>
+    class GenerateScatteredHierarchy<Unit,boost::mp11::mp_size<boost::mp11::mp_list<>>, TypeList> 
+    {
+        public: 
+            GenerateScatteredHierarchy ()
+            {
+                std::cout << "---" << std::endl;
+                std::cout << "Empty type list" << std::endl;
+                std::cout << "---" << std::endl << std::endl;
+            }   // constructor
+
+    };
 
 }; // namespace MCD_MP_FOLD
 

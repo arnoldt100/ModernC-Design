@@ -38,9 +38,9 @@ Person2::~Person2()
 }
 
 //============================= ACCESSORS ====================================
-void Person2::who_am_i() const
+std::string Person2::who_am_i() const
 {
-    std::cout << "I'm person2." << std::endl;
+    return "I'm person2.";
 }
 
 

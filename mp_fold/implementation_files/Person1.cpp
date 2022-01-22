@@ -41,9 +41,9 @@ Person1::~Person1()
 //============================= ACCESSORS ====================================
 
 //============================= MUTATORS =====================================
-void Person1::who_am_i() const
+std::string Person1::who_am_i() const
 {
-    std::cout << "I'm person1." << std::endl;
+    return "I'm person1.";
 }
 
 //============================= OPERATORS ====================================
