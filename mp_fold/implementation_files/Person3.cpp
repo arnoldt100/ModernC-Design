@@ -28,13 +28,13 @@ Person3::Person3()
 
 Person3::Person3( Person3 && other)
 {
-    std::cout << "deleting Person3" << std::endl;
     return;
 }		// -----  end of method Person3::Person3  -----
 
 
 Person3::~Person3()
 {
+    std::cout << "deleting Person3" << std::endl;
     return;
 }
 

@@ -33,5 +33,6 @@ using PersonWidget = MCD_MP_FOLD::GenerateScatteredHierarchy< MCD_MP_FOLD::MyNam
 int main (int argc, char** argv)
 {
     PersonWidget aPersonWidget;
+
     return 0;
 }

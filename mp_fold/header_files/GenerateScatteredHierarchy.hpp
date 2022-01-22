@@ -18,8 +18,25 @@
 //--------------------- Package includes -----------------//
 //--------------------------------------------------------//
 
-tenplate<typename T>
-using mp_rest_size = boost::mp11::mp_size< boost::mp11::mp_rest<T> >
+//-----------------------------------------------------
+//  Below we define aliases to boost mp11 meta        -
+//  programming library.                              -
+//                                                    -
+//-----------------------------------------------------
+template<typename ...T>
+using mpl_typelist = boost::mp11::mp_list<T...>;
+
+template<typename L>
+using mpl_size = boost::mp11::mp_size<L>;
+
+template<typename L>
+using mpl_rest_size = boost::mp11::mp_size< boost::mp11::mp_rest<L> >;
+
+template<typename L>
+using mpl_rest = boost::mp11::mp_rest<L>;
+
+template<typename L>
+using mpl_front = boost::mp11::mp_front<L>;
 
 namespace MCD_MP_FOLD
 {
@@ -30,9 +47,10 @@ namespace MCD_MP_FOLD
     //  =====================================================================================
     //
    
-    template<template<typename> typename Unit, typename TypeListSize ,typename TypeList>
-    class GenerateScatteredHierarchy : public Unit<boost::mp11::mp_front<TypeList>>,
-                                       public boost::mp11::mp_rest<TypeList>
+    template<template<typename> typename Unit, typename TypeListSize ,typename L>
+    class GenerateScatteredHierarchy : public Unit<mpl_front<L>>,
+                                       public mpl_size<L>,
+                                       public GenerateScatteredHierarchy<Unit,mpl_rest_size<L>,mpl_rest<L>> 
     {
         public:
             // ====================  LIFECYCLE     =======================================
@@ -50,9 +68,9 @@ namespace MCD_MP_FOLD
             {
                 std::cout << "---" << std::endl;
                 std::cout << "The Typelist element is: " << typeid(this->my_typelist_).name() << std::endl;
-                std::cout << "The head is: " << typeid(Unit<boost::mp11::mp_front<TypeList>>).name() << std::endl;
-                std::cout << "The tail is: " << typeid(boost::mp11::mp_rest<TypeList>).name() << std::endl;
-                this->show_my_name();
+                std::cout << "The head is: " << typeid(Unit<boost::mp11::mp_front<L>>).name() << std::endl;
+                std::cout << "The tail is: " << typeid(boost::mp11::mp_rest<L>).name() << std::endl;
+                // this->show_my_name();
                 std::cout << "---" << std::endl << std::endl;
             }   // constructor
 
@@ -104,13 +122,13 @@ namespace MCD_MP_FOLD
             // ====================  METHODS       =======================================
 
             // ====================  DATA MEMBERS  =======================================
-            TypeList my_typelist_;
+            L my_typelist_;
 
     }; // -----  end of class GenerateScatteredHierarchy  -----
 
 
-    template<template<typename> typename Unit, typename TypeList>
-    class GenerateScatteredHierarchy<Unit,boost::mp11::mp_size<boost::mp11::mp_list<>>, TypeList> 
+    template<template<typename> typename Unit, typename L>
+    class GenerateScatteredHierarchy<Unit,mpl_size<mpl_typelist<>>, L> 
     {
         public: 
             GenerateScatteredHierarchy ()
