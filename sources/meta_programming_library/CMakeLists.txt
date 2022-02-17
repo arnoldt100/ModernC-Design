@@ -115,7 +115,8 @@ target_sources(${target}
 #                                                    -
 #-----------------------------------------------------
 target_include_directories(${target} 
-                           PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/header_files )
+                           PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/header_files
+                           PRIVATE ${Boost_INCLUDE_DIR} )
 
 #-----------------------------------------------------
 # Enable compile warnings.                           -
@@ -130,7 +131,8 @@ enable_compile_warnings(${target})
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)
 target_link_libraries( ${target}
-                       PUBLIC Threads::Threads)
+                       PUBLIC Threads::Threads 
+                       ${Boost_LIBRARIES} )
 
 #-----------------------------------------------------
 # Here we set the properties on target               -
