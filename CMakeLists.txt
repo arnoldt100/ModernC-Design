@@ -12,10 +12,17 @@
     cmake_minimum_required(VERSION $ENV{MODERNCPPDESIGN_CMAKE_VERSION})
 
     #-----------------------------------------------------
+    # Define key variables of this project,              -
+    #                                                    -
+    #-----------------------------------------------------
+    set(moderncppdesign_install_bin_directory $ENV{MODERNCPPDESIGN_INSTALL_BIN_DIRECTORY})
+
+    #-----------------------------------------------------
     # Define the project.                                -
     #                                                    -
     #-----------------------------------------------------
-    project("ModernCPPDesign")
+    set(project_name "ModernCPPDesign" )
+    project(${project_name})
 
     #-----------------------------------------------------
     # Make available the project cmake modules.          -
@@ -55,6 +62,7 @@
 #                                                    -
 #-----------------------------------------------------
 verify_key_environmental_are_set()
+
 
 # -----------------------------------------------------
 # This section permits use to find the header files  -
