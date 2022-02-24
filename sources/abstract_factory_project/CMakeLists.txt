@@ -62,7 +62,7 @@
     #-----------------------------------------------------
     set (abstract_factory_header_files
          header_files/main.h
-         header_files/Enemy.h )
+         header_files/enemy.h )
 
     #-----------------------------------------------------
     # Here we define the variable                        -
@@ -73,7 +73,7 @@
     #-----------------------------------------------------
     set (abstract_factory_implementation_files
          implementation_files/main.cpp
-         implementation_files/Enemy.cpp)
+         implementation_files/enemy.cpp)
 
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 #                                                                 @
@@ -90,6 +90,9 @@
 add_executable( ${target}
                 "" )
 
+add_dependencies(${target} 
+                 mpl)
+
 #-----------------------------------------------------
 #                                                    -
 # We associate the source files with the target.     -
@@ -105,6 +108,11 @@ target_sources(${target}
 #-----------------------------------------------------
 target_include_directories(${target} 
                            PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/header_files )
+
+
+target_link_libraries(${target}
+                      PRIVATE mpl 
+                      ${Boost_LIBRARIES} )
 
 #-----------------------------------------------------
 # Enable compile warnings.                           -
