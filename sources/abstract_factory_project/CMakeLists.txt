@@ -61,7 +61,8 @@
     #                                                    -
     #-----------------------------------------------------
     set (abstract_factory_header_files
-         header_files/main.h )
+         header_files/main.h
+         header_files/Enemy.h )
 
     #-----------------------------------------------------
     # Here we define the variable                        -
@@ -71,7 +72,8 @@
     #                                                    -
     #-----------------------------------------------------
     set (abstract_factory_implementation_files
-         implementation_files/main.cpp )
+         implementation_files/main.cpp
+         implementation_files/Enemy.cpp)
 
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 #                                                                 @
