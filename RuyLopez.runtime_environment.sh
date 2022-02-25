@@ -2,7 +2,7 @@
 # Define the path to the Anansi top level.           -
 #                                                    -
 #-----------------------------------------------------
-export MODERNCPPDESIGN_TOP_LEVEL='/home/8nt/arnolds-eclipse-workspace/ModernCPPDesign'
+export MODERNCPPDESIGN_TOP_LEVEL='/home/8nt/arnold-eclipse-workspace/ModernCPPDesign'
 
 #-----------------------------------------------------
 # Load the MPI library.                              -
@@ -14,7 +14,7 @@ module load openMPI/4.1.1
 # Loads the boost library.                           -
 #                                                    -
 #-----------------------------------------------------
-module load boost/1.77.0
+module load boost/1.77
 
 #-----------------------------------------------------
 # Loads visual debugger.                             -
