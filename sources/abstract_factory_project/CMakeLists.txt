@@ -64,7 +64,8 @@
          header_files/main.h
          header_files/enemy.h
          header_files/Monster.h
-         header_files/Soldier.h )
+         header_files/Soldier.h 
+         header_files/SillySoldier.h )
 
     #-----------------------------------------------------
     # Here we define the variable                        -
@@ -77,7 +78,8 @@
          implementation_files/main.cpp
          implementation_files/enemy.cpp
          implementation_files/Monster.cpp
-         implementation_files/Soldier.cpp)
+         implementation_files/Soldier.cpp
+         implementation_files/SillySoldier.cpp)
 
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 #                                                                 @
