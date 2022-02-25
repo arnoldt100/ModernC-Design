@@ -70,7 +70,8 @@
          header_files/BadSoldier.h
          header_files/SillyMonster.h
          header_files/BadMonster.h
-         header_files/SillySuperMonster.h )
+         header_files/SillySuperMonster.h 
+         header_files/BadSuperMonster.h )
 
     #-----------------------------------------------------
     # Here we define the variable                        -
@@ -89,7 +90,8 @@
          implementation_files/BadSoldier.cpp 
          implementation_files/SillyMonster.cpp 
          implementation_files/BadMonster.cpp
-         implementation_files/SillySuperMonster.cpp )
+         implementation_files/SillySuperMonster.cpp 
+         implementation_files/BadSuperMonster.cpp )
 
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 #                                                                 @
