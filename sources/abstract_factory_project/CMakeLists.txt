@@ -62,7 +62,9 @@
     #-----------------------------------------------------
     set (abstract_factory_header_files
          header_files/main.h
-         header_files/enemy.h )
+         header_files/enemy.h
+         header_files/Monster.h
+         header_files/Soldier.h )
 
     #-----------------------------------------------------
     # Here we define the variable                        -
@@ -73,7 +75,9 @@
     #-----------------------------------------------------
     set (abstract_factory_implementation_files
          implementation_files/main.cpp
-         implementation_files/enemy.cpp)
+         implementation_files/enemy.cpp
+         implementation_files/Monster.cpp
+         implementation_files/Soldier.cpp)
 
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 #                                                                 @
