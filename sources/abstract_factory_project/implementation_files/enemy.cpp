@@ -22,7 +22,6 @@ namespace GAME_ENEMIES {
 
 Enemy::Enemy()
 {
-	// TODO Auto-generated constructor stub
     return;
 }
 
@@ -34,7 +33,6 @@ Enemy::Enemy( Enemy && other)
 
 Enemy::~Enemy()
 {
-	// TODO Auto-generated destructor stub
     return;
 }
 
