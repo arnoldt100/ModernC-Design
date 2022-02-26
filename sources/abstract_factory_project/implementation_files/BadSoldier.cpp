@@ -26,6 +26,17 @@ BadSoldier::BadSoldier() :
     return;
 }
 
+BadSoldier::BadSoldier( const BadSoldier & other) :
+    Soldier(other)
+{
+    if (this != &other)
+    {
+
+    }
+    return;
+}		// -----  end of method BadSoldier::BadSoldier  -----
+
+
 BadSoldier::BadSoldier( BadSoldier && other) :
     Soldier(std::move(other))
 {

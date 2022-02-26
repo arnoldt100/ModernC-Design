@@ -26,6 +26,16 @@ SillySoldier::SillySoldier() :
     return;
 }
 
+SillySoldier::SillySoldier( const SillySoldier & other) :
+    Soldier(other)
+{
+    if (this != &other)
+    {
+
+    }
+    return;
+}		// -----  end of method SillySoldier::SillySoldier  -----
+
 SillySoldier::SillySoldier( SillySoldier && other) :
     Soldier(std::move(other))
 {

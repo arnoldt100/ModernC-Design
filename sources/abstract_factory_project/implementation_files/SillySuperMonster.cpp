@@ -26,6 +26,16 @@ SillySuperMonster::SillySuperMonster() :
     return;
 }
 
+SillySuperMonster::SillySuperMonster( const SillySuperMonster & other) :
+    SuperMonster(other)
+{
+    if ( this != &other)
+    {
+
+    }
+    return;
+}		// -----  end of method SillySuperMonster::SillySuperMonster  -----
+
 SillySuperMonster::SillySuperMonster( SillySuperMonster && other) :
     SuperMonster(std::move(other))
 {
