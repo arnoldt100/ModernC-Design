@@ -62,6 +62,13 @@ int main(int argc, char** argv)
 
     std::cout << std::endl << "=============================" << std::endl << std::endl;
 
+    std::cout << "===============================" << std::endl;
+    std::cout << "== Generate Concrete Product ==" << std::endl;
+    std::cout << "===============================" << std::endl << std::endl;
+
+
+    std::cout << std::endl << "===============================" << std::endl << std::endl;
+
     std::cout << "End of executing main program." << std::endl;
     return 0;
 }
