@@ -25,6 +25,14 @@ Enemy::Enemy()
     return;
 }
 
+Enemy::Enemy(const Enemy & other)
+{
+	if ( this != &other)
+	{
+
+	}
+	return;
+}
 Enemy::Enemy( Enemy && other)
 {
     return;

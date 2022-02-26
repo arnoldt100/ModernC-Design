@@ -1,8 +1,6 @@
 //--------------------------------------------------------//
 //-------------------- System includes -------------------//
 //--------------------------------------------------------//
-#include <utility>
-#include <iostream>
 
 //--------------------------------------------------------//
 //-------------------- External Library Files ------------//
@@ -11,9 +9,9 @@
 //--------------------------------------------------------//
 //--------------------- Package includes -----------------//
 //--------------------------------------------------------//
-#include "Monster.h"
+#include "TestEventHandler.hpp"
 
-namespace GAME_ENEMIES {
+namespace MPL {
 
 //////////////////////////////////////////////////////////////////////////////
 /////////////////////////////// PUBLIC ///////////////////////////////////////
@@ -21,59 +19,11 @@ namespace GAME_ENEMIES {
 
 //============================= LIFECYCLE ====================================
 
-Monster::Monster() :
-    Enemy()
-{
-    std::cout << "Instantiating Monster." << std::endl;
-    return;
-}
-
-Monster::Monster(const Monster & other) :
-		Enemy(other)
-{
-	if (this != & other)
-	{
-
-	}
-	return;
-}
-
-Monster::Monster( Monster && other) :
-    Enemy(std::move(other))
-{
-    return;
-}		// -----  end of method Monster::Monster  -----
-
-
-Monster::~Monster()
-{
-    return;
-}
-
 //============================= ACCESSORS ====================================
 
 //============================= MUTATORS =====================================
 
 //============================= OPERATORS ====================================
-
-Monster& Monster::operator= ( const Monster &other )
-{
-    if (this != &other)
-    {
-        Enemy::operator=(other);
-    }
-    return *this;
-} // assignment operator
-
-Monster& Monster::operator= ( Monster && other )
-{
-    if (this != &other)
-    {
-        Enemy::operator=(std::move(other));
-
-    }
-    return *this;
-} // assignment-move operator
 
 //////////////////////////////////////////////////////////////////////////////
 /////////////////////////////// PROTECTED ////////////////////////////////////
@@ -99,5 +49,4 @@ Monster& Monster::operator= ( Monster && other )
 
 //============================= OPERATORS ====================================
 
-
-} // namespace GAME_ENEMIES
+} // namespace MPL

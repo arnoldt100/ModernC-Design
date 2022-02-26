@@ -72,7 +72,8 @@
          header_files/BadMonster.h
          header_files/SillySuperMonster.h 
          header_files/BadSuperMonster.h
-         header_files/TestAbstractFactoryUnit.hpp )
+         header_files/TestAbstractFactoryUnit.hpp
+         header_files/TestEventHandler.hpp )
 
     #-----------------------------------------------------
     # Here we define the variable                        -
@@ -93,7 +94,8 @@
          implementation_files/BadMonster.cpp
          implementation_files/SillySuperMonster.cpp 
          implementation_files/BadSuperMonster.cpp
-         implementation_files/TestAbstractFactoryUnit.cpp )
+         implementation_files/TestAbstractFactoryUnit.cpp 
+         implementation_files/TestEventHandler.cpp )
 
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 #                                                                 @

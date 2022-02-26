@@ -26,6 +26,16 @@ BadMonster::BadMonster() :
     return;
 }
 
+BadMonster::BadMonster( const BadMonster & other) :
+        Monster(other)
+{
+    if ( this != &other)
+    {
+
+    }
+    return;
+}		// -----  end of method BadMonster::BadMonster  -----
+
 BadMonster::BadMonster( BadMonster && other) :
     Monster(std::move(other))
 {
