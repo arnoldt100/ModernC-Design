@@ -29,9 +29,10 @@ template <
          >
 class AbstractFactory : public GenerateScatteredHierarchy<Unit, mpl_size<L>,L>
 {
-    using ProductList = L;
 
     public:
+        using ProductList = L;
+
         // ====================  LIFECYCLE     =======================================
 
         //--------------------------------------------------------------------------------------

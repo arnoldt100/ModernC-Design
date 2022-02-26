@@ -16,8 +16,11 @@
 // The abstract products typelist.
 using abstract_products_typelist1 = MPL::mpl_typelist<GAME_ENEMIES::Soldier,GAME_ENEMIES::Monster,GAME_ENEMIES::SuperMonster>;
 
-using abstract_products_typelist2 = MPL::mpl_typelist<GAME_ENEMIES::Soldier,GAME_ENEMIES::Monster,GAME_ENEMIES::SuperMonster>;
+using abstract_products_typelist2 = MPL::mpl_typelist<GAME_ENEMIES::Soldier>;
+using concrete_prodcts_typelist2 = MPL::mpl_typelist<GAME_ENEMIES::SillySoldier>;
+
 using abstract_factory = MPL::AbstractFactory<abstract_products_typelist2>;
+using concrete_factory = MPL::ConcreteFactory<abstract_factory,concrete_prodcts_typelist2>;
 
 int main(int argc, char** argv)
 {
@@ -71,6 +74,13 @@ int main(int argc, char** argv)
     std::cout << "== Generate Concrete Product ==" << std::endl;
     std::cout << "===============================" << std::endl << std::endl;
 
+    concrete_factory* my_factory_ptr = new concrete_factory;
+
+    if ( my_factory_ptr != nullptr)
+    {
+        delete my_factory_ptr;
+    }
+    my_factory_ptr = nullptr;
 
     std::cout << std::endl << "===============================" << std::endl << std::endl;
 

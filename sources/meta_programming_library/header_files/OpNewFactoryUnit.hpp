@@ -27,6 +27,12 @@ namespace MPL
     class OpNewFactoryUnit : Base
     {
 
+        private : 
+            using BaseProductList = typename Base::ProductList;
+
+        protected:
+            using ProductList = mpl_rest<typename Base::ProductList>;
+
         public:
             using AbstractProduct = mpl_front<typename Base::ProductList>;
 
@@ -99,21 +105,6 @@ namespace MPL
                 }
                 return *this;
             }
-
-        protected:
-
-            using ProductList = mpl_rest<typename Base::ProductList>;
-
-            // ====================  METHODS       =======================================
-
-            // ====================  DATA MEMBERS  =======================================
-
-        private:
-            using BaseProductList = typename Base::ProductList;
-
-            // ====================  METHODS       =======================================
-
-            // ====================  DATA MEMBERS  =======================================
 
     }; // -----  end of class OpNewFactoryUnit  -----
 
