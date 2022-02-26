@@ -57,7 +57,7 @@ class AbstractFactoryUnit
         }
 
         // ====================  ACCESSORS     =======================================
-        virtual T* DoCreate(mpl_type2type<T>) const = 0;
+        virtual T* DoCreate(MPL::mpl_type2type<T>) const = 0;
 
         // ====================  MUTATORS      =======================================
 

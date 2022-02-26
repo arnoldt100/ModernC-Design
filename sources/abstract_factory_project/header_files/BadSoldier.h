@@ -45,6 +45,12 @@ namespace GAME_ENEMIES
             ~BadSoldier ();  // destructor
 
             // ====================  ACCESSORS     =======================================
+            
+            template<typename T>
+            T* DoCreate(MPL::mpl_type2type<T>) const
+            {
+                std::cout << "In DoCreate of BadSoldier." << std::endl;
+            } 
 
             // ====================  MUTATORS      =======================================
 

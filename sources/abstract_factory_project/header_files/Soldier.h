@@ -5,6 +5,7 @@
 //--------------------------------------------------------//
 //-------------------- System includes -------------------//
 //--------------------------------------------------------//
+#include <iostream>
 
 //--------------------------------------------------------//
 //-------------------- External Library Files ------------//
@@ -42,9 +43,15 @@ namespace GAME_ENEMIES
 
             Soldier (Soldier && other);   // copy-move constructor
 
-            virtual ~Soldier ()=0;  // destructor
+            ~Soldier();  // destructor
 
             // ====================  ACCESSORS     =======================================
+
+            GAME_ENEMIES::Soldier* DoCreate(MPL::mpl_type2type<GAME_ENEMIES::Soldier>) const
+            {
+                std::cout << "In DoCreate of Soldier." << std::endl;
+                return new Soldier;
+            }
 
             // ====================  MUTATORS      =======================================
 
