@@ -5,6 +5,8 @@
 //-------------------- System includes -------------------//
 //--------------------------------------------------------//
 #include <utility>
+#include <iostream>
+#include <typeinfo>
 
 //--------------------------------------------------------//
 //-------------------- External Library Files ------------//
@@ -13,6 +15,7 @@
 //--------------------------------------------------------//
 //--------------------- Package includes -----------------//
 //--------------------------------------------------------//
+#include "MPLAliases.hpp"
 
 namespace MPL
 {
@@ -39,6 +42,7 @@ namespace MPL
             TestEventHandler ()   // constructor
                 : Base()
             {
+                std::cout << "Instantiating TestEventHandler of type " <<  typeid(mpl_type2type<T>).name() << std::endl ;;
                 return;
             }
 
@@ -60,7 +64,7 @@ namespace MPL
             }
 
             // ====================  ACCESSORS     =======================================
-            virtual void OnEvent(T &obj);
+            // virtual void OnEvent(T &obj);
 
             // ====================  MUTATORS      =======================================
 

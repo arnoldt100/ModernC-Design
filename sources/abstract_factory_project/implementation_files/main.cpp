@@ -45,20 +45,20 @@ int main(int argc, char** argv)
     std::cout << "== GenerateLinearHierarchy ==" << std::endl;
     std::cout << "=============================" << std::endl << std::endl;
 
-    // MPL::GenerateLinearHierarchy<MPL::TestEventHandler,
-    //                              MPL::mpl_size<abstract_products_typelist>,
-    //                              abstract_products_typelist> * my_linear_hierarchy_ptr = 
-    //     new MPL::GenerateLinearHierarchy<MPL::TestEventHandler,
-    //                                     MPL::mpl_size<abstract_products_typelist>,
-    //                                     abstract_products_typelist>();
+    MPL::GenerateLinearHierarchy<MPL::TestEventHandler,
+                                 MPL::mpl_size<abstract_products_typelist>,
+                                 abstract_products_typelist> * my_linear_hierarchy_ptr = 
+        new MPL::GenerateLinearHierarchy<MPL::TestEventHandler,
+                                        MPL::mpl_size<abstract_products_typelist>,
+                                        abstract_products_typelist>();
 
 
 
-    // if ( my_linear_hierarchy_ptr != nullptr)
-    // {
-    //     delete my_linear_hierarchy_ptr;
-    // }
-    // my_linear_hierarchy_ptr = nullptr;
+    if ( my_linear_hierarchy_ptr != nullptr)
+    {
+        delete my_linear_hierarchy_ptr;
+    }
+    my_linear_hierarchy_ptr = nullptr;
 
     std::cout << std::endl << "=============================" << std::endl << std::endl;
 
