@@ -42,7 +42,7 @@ namespace GAME_ENEMIES
 
             Monster (Monster && other);   // copy-move constructor
 
-            virtual ~Monster ()=0;  // destructor
+            virtual ~Monster ();  // destructor
 
             // ====================  ACCESSORS     =======================================
 

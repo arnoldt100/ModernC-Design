@@ -71,7 +71,8 @@
          header_files/SillyMonster.h
          header_files/BadMonster.h
          header_files/SillySuperMonster.h 
-         header_files/BadSuperMonster.h )
+         header_files/BadSuperMonster.h
+         header_files/TestAbstractFactoryUnit.hpp )
 
     #-----------------------------------------------------
     # Here we define the variable                        -
@@ -91,7 +92,8 @@
          implementation_files/SillyMonster.cpp 
          implementation_files/BadMonster.cpp
          implementation_files/SillySuperMonster.cpp 
-         implementation_files/BadSuperMonster.cpp )
+         implementation_files/BadSuperMonster.cpp
+         implementation_files/TestAbstractFactoryUnit.cpp )
 
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 #                                                                 @

@@ -14,6 +14,7 @@
 //--------------------------------------------------------//
 //--------------------- Package includes -----------------//
 //--------------------------------------------------------//
+#include "MPLAliases.hpp"
 #include "enemy.h"
 
 namespace GAME_ENEMIES
@@ -46,12 +47,6 @@ namespace GAME_ENEMIES
             ~Soldier();  // destructor
 
             // ====================  ACCESSORS     =======================================
-
-            GAME_ENEMIES::Soldier* DoCreate(MPL::mpl_type2type<GAME_ENEMIES::Soldier>) const
-            {
-                std::cout << "In DoCreate of Soldier." << std::endl;
-                return new Soldier;
-            }
 
             // ====================  MUTATORS      =======================================
 
