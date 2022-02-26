@@ -17,6 +17,10 @@ int main(int argc, char** argv)
 
     std::cout << "Start of executing main program." << std::endl;
 
+    std::cout << "================================" << std::endl;
+    std::cout << "== GenerateScatteredHierarchy ==" << std::endl;
+    std::cout << "================================" << std::endl << std::endl;
+
     MPL::GenerateScatteredHierarchy<MPL::TestAbstractFactoryUnit,
                                     MPL::mpl_size<abstract_products_typelist>,
                                     abstract_products_typelist> * my_scattered_hiearchy_ptr \
@@ -29,6 +33,8 @@ int main(int argc, char** argv)
         delete my_scattered_hiearchy_ptr;
     }
     my_scattered_hiearchy_ptr = nullptr;
+
+    std::cout << std::endl << "================================" << std::endl << std::endl;
 
     std::cout << "End of executing main program." << std::endl;
     return 0;
