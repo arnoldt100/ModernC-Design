@@ -4,6 +4,7 @@
 //--------------------------------------------------------//
 //-------------------- System includes -------------------//
 //--------------------------------------------------------//
+#include <utility>
 
 //--------------------------------------------------------//
 //-------------------- External Library Files ------------//
@@ -44,7 +45,8 @@ namespace MPL
                 return;
             }
 
-            OpNewFactoryUnit (const OpNewFactoryUnit & other)   // copy constructor
+            OpNewFactoryUnit (const OpNewFactoryUnit & other) : // copy constructor
+                Base(other)
             {
                 if (this != &other)
                 {
@@ -53,7 +55,8 @@ namespace MPL
                 return;
             }
 
-            OpNewFactoryUnit (OpNewFactoryUnit && other)   // copy-move constructor
+            OpNewFactoryUnit (OpNewFactoryUnit && other) : // copy-move constructor
+                Base(std::move(other))
             {
                 if (this != &other)
                 {
@@ -81,7 +84,7 @@ namespace MPL
             {
                 if ( this != &other)
                 {
-
+                    Base::operator=(other);
                 }
                 return *this;
             }
@@ -90,6 +93,7 @@ namespace MPL
             {
                 if (this != &other)
                 {
+                    Base::operator=(std::move(other));
 
                 }
                 return *this;

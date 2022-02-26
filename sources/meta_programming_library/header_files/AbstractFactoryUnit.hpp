@@ -4,6 +4,7 @@
 //--------------------------------------------------------//
 //-------------------- System includes -------------------//
 //--------------------------------------------------------//
+#include <utility>
 
 //--------------------------------------------------------//
 //-------------------- External Library Files ------------//
@@ -43,6 +44,10 @@ class AbstractFactoryUnit
 
         AbstractFactoryUnit (const AbstractFactoryUnit & other) // copy constructor
         {
+            if (this != &other) 
+            {
+
+            }
             return;
         }
 
