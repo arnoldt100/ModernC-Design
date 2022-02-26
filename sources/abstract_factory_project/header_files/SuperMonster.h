@@ -22,7 +22,7 @@ namespace GAME_ENEMIES
      //        Class:  SuperMonster
      //  Description:  
      //  =====================================================================================
-    class SuperMonster : Enemy
+    class SuperMonster : public Enemy
     {
         public:
             // ====================  LIFECYCLE     =======================================

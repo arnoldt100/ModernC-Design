@@ -23,7 +23,7 @@ namespace GAME_ENEMIES
      //        Class:  Soldier
      //  Description:  
      //  =====================================================================================
-    class Soldier : Enemy
+    class Soldier : public Enemy
     {
         public:
             // ====================  LIFECYCLE     =======================================
@@ -43,7 +43,7 @@ namespace GAME_ENEMIES
 
             Soldier (Soldier && other);   // copy-move constructor
 
-            virtual ~Soldier();  // destructor
+            virtual ~Soldier()=0;  // destructor
 
             // ====================  ACCESSORS     =======================================
 

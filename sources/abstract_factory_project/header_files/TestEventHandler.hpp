@@ -25,7 +25,7 @@ namespace MPL
      //  Description:  
      //  =====================================================================================
     template <typename T,typename Base>
-    class TestEventHandler : Base
+    class TestEventHandler : public Base
     {
         public:
             // ====================  LIFECYCLE     =======================================

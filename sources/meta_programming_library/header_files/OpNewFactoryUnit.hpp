@@ -6,6 +6,9 @@
 //-------------------- System includes -------------------//
 //--------------------------------------------------------//
 #include <utility>
+#include <iostream>
+#include <typeinfo>
+
 
 //--------------------------------------------------------//
 //-------------------- External Library Files ------------//
@@ -24,14 +27,8 @@ namespace MPL
      //  Description:  
      //  =====================================================================================
     template <typename ConcreteProduct, typename Base>
-    class OpNewFactoryUnit : Base
+    class OpNewFactoryUnit : public Base
     {
-
-        private : 
-            using BaseProductList = typename Base::ProductList;
-
-        protected:
-            using ProductList = mpl_rest<typename Base::ProductList>;
 
         public:
             using AbstractProduct = mpl_front<typename Base::ProductList>;
@@ -78,8 +75,9 @@ namespace MPL
             }
 
             // ====================  ACCESSORS     =======================================
-            ConcreteProduct* DoCreate(mpl_type2type<AbstractProduct>) const
+            ConcreteProduct* DoCreate(mpl_type2type<AbstractProduct>)
             {
+            	std::cout << "Creating product " << typeid(mpl_type2type<ConcreteProduct>).name() << std::endl;
                 return new ConcreteProduct;
             }
 
@@ -105,6 +103,12 @@ namespace MPL
                 }
                 return *this;
             }
+
+        protected:
+            using ProductList = mpl_rest<typename Base::ProductList>;
+
+        private : 
+            using BaseProductList = typename Base::ProductList;
 
     }; // -----  end of class OpNewFactoryUnit  -----
 

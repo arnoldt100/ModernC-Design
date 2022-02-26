@@ -22,7 +22,7 @@ namespace GAME_ENEMIES
      //        Class:  BadMonster
      //  Description:  
      //  =====================================================================================
-    class BadMonster : Monster
+    class BadMonster : public Monster
     {
         public:
             // ====================  LIFECYCLE     =======================================

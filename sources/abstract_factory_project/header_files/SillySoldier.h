@@ -23,7 +23,7 @@ namespace GAME_ENEMIES
      //        Class:  SillySoldier
      //  Description:  
      //  =====================================================================================
-    class SillySoldier : Soldier
+    class SillySoldier : public Soldier
     {
         public:
             // ====================  LIFECYCLE     =======================================
