@@ -1,5 +1,6 @@
-#ifndef __filepreprocessordefine__
-#define __filepreprocessordefine__
+#ifndef  OpNewFactoryUnit_INC
+#define  OpNewFactoryUnit_INC
+
 
 //--------------------------------------------------------//
 //-------------------- System includes -------------------//
@@ -119,4 +120,4 @@ namespace MPL
 
 }; // namespace MPL
 
-#endif // __filepreprocessordefine__
+#endif   /* ----- #ifndef OpNewFactoryUnit_INC  ----- */

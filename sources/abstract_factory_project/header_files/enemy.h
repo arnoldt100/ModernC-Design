@@ -1,5 +1,6 @@
-#ifndef __filepreprocessordefine__
-#define __filepreprocessordefine__
+#ifndef  enemy_INC
+#define  enemy_INC
+
 
 //--------------------------------------------------------//
 //-------------------- System includes -------------------//
@@ -67,4 +68,4 @@ class Enemy
 
 }; // namespace GAME_ENEMIES
 
-#endif // __filepreprocessordefine__
+#endif   /* ----- #ifndef enemy_INC  ----- */

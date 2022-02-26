@@ -10,9 +10,14 @@
 #include "TestEventHandler.hpp"
 #include "GenerateScatteredHierarchy.hpp"
 #include "GenerateLinearHierarchy.hpp"
+#include "AbstractFactory.hpp"
+#include "ConcreteFactory.hpp"
 
 // The abstract products typelist.
-using abstract_products_typelist = MPL::mpl_typelist<GAME_ENEMIES::Soldier,GAME_ENEMIES::Monster,GAME_ENEMIES::SuperMonster>;
+using abstract_products_typelist1 = MPL::mpl_typelist<GAME_ENEMIES::Soldier,GAME_ENEMIES::Monster,GAME_ENEMIES::SuperMonster>;
+
+using abstract_products_typelist2 = MPL::mpl_typelist<GAME_ENEMIES::Soldier,GAME_ENEMIES::Monster,GAME_ENEMIES::SuperMonster>;
+using abstract_factory = MPL::AbstractFactory<abstract_products_typelist2>;
 
 int main(int argc, char** argv)
 {
@@ -24,11 +29,11 @@ int main(int argc, char** argv)
     std::cout << "================================" << std::endl << std::endl;
 
     MPL::GenerateScatteredHierarchy<MPL::TestAbstractFactoryUnit,
-                                    MPL::mpl_size<abstract_products_typelist>,
-                                    abstract_products_typelist> * my_scattered_hiearchy_ptr = \
+                                    MPL::mpl_size<abstract_products_typelist1>,
+                                    abstract_products_typelist1> * my_scattered_hiearchy_ptr = \
         new MPL::GenerateScatteredHierarchy< MPL::TestAbstractFactoryUnit,
-                                             MPL::mpl_size<abstract_products_typelist>,
-                                             abstract_products_typelist>(); 
+                                             MPL::mpl_size<abstract_products_typelist1>,
+                                             abstract_products_typelist1>(); 
 
     if ( my_scattered_hiearchy_ptr != nullptr )
     {
@@ -46,11 +51,11 @@ int main(int argc, char** argv)
     std::cout << "=============================" << std::endl << std::endl;
 
     MPL::GenerateLinearHierarchy<MPL::TestEventHandler,
-                                 MPL::mpl_size<abstract_products_typelist>,
-                                 abstract_products_typelist> * my_linear_hierarchy_ptr = 
+                                 MPL::mpl_size<abstract_products_typelist1>,
+                                 abstract_products_typelist1> * my_linear_hierarchy_ptr = 
         new MPL::GenerateLinearHierarchy<MPL::TestEventHandler,
-                                        MPL::mpl_size<abstract_products_typelist>,
-                                        abstract_products_typelist>();
+                                        MPL::mpl_size<abstract_products_typelist1>,
+                                        abstract_products_typelist1>();
 
 
 
