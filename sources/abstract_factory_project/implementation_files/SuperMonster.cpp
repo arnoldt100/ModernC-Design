@@ -28,6 +28,16 @@ SuperMonster::SuperMonster() :
     return;
 }
 
+SuperMonster::SuperMonster( const SuperMonster & other) :
+    Enemy(other)
+{
+    if (this != &other)
+    {
+
+    }
+    return;
+}		// -----  end of method SuperMonster::SuperMonster  -----
+
 SuperMonster::SuperMonster( SuperMonster && other) :
     Enemy(std::move(other))
 {

@@ -26,6 +26,16 @@ BadSuperMonster::BadSuperMonster() :
     return;
 }
 
+BadSuperMonster::BadSuperMonster(BadSuperMonster const & other) :
+    SuperMonster(other)
+{
+    if (this != &other)
+    {
+
+    }
+    return;
+}
+
 BadSuperMonster::BadSuperMonster( BadSuperMonster && other) :
     SuperMonster(std::move(other))
 {

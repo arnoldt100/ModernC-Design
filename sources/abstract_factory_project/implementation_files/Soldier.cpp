@@ -28,6 +28,16 @@ Soldier::Soldier() :
     return;
 }
 
+Soldier::Soldier( const Soldier & other) :
+    Enemy(other)
+{
+    if (this != &other)
+    {
+
+    }
+    return;
+}		// -----  end of method Soldier::Soldier  -----
+
 Soldier::Soldier( Soldier && other) :
     Enemy(std::move(other))
 {
