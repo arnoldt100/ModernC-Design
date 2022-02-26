@@ -43,6 +43,7 @@ namespace MPL
             //--------------------------------------------------------------------------------------
             GenerateScatteredHierarchy ()
             {
+                std::cout << "Instantiating GenerateScatteredHierarchy, typelist size " << mpl_size<L>::value << std::endl;
                 return;
             }   // constructor
 

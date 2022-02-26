@@ -6,17 +6,29 @@
 #include "BadMonster.h"
 #include "SillySuperMonster.h"
 #include "BadSuperMonster.h"
-#include "AbstractFactory.hpp"
+#include "TestAbstractFactoryUnit.hpp"
+#include "GenerateScatteredHierarchy.hpp"
 
 // The abstract products typelist.
-using abstract_products_typelist = MPL::mpl_typelist<GAME_ENEMIES::Soldier>;
+using abstract_products_typelist = MPL::mpl_typelist<GAME_ENEMIES::Soldier,GAME_ENEMIES::Monster,GAME_ENEMIES::SuperMonster>;
 
 int main(int argc, char** argv)
 {
 
     std::cout << "Start of executing main program." << std::endl;
 
-    
+    MPL::GenerateScatteredHierarchy<MPL::TestAbstractFactoryUnit,
+                                    MPL::mpl_size<abstract_products_typelist>,
+                                    abstract_products_typelist> * my_scattered_hiearchy_ptr \
+        = new MPL::GenerateScatteredHierarchy< MPL::TestAbstractFactoryUnit,
+                                               MPL::mpl_size<abstract_products_typelist>,
+                                               abstract_products_typelist>(); 
+
+    if ( my_scattered_hiearchy_ptr != 0 )
+    {
+        delete my_scattered_hiearchy_ptr;
+    }
+    my_scattered_hiearchy_ptr = nullptr;
 
     std::cout << "End of executing main program." << std::endl;
     return 0;

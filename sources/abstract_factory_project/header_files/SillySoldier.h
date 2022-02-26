@@ -47,12 +47,6 @@ namespace GAME_ENEMIES
 
             // ====================  ACCESSORS     =======================================
 
-            template<typename T>
-            T* DoCreate(MPL::mpl_type2type<T>) const
-            {
-                std::cout << "In DoCreate of SillySoldier." << std::endl;
-            } 
-
             // ====================  MUTATORS      =======================================
 
             // ====================  OPERATORS     =======================================

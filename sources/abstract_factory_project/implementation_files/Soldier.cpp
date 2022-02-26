@@ -2,6 +2,7 @@
 //-------------------- System includes -------------------//
 //--------------------------------------------------------//
 #include <utility>
+#include <iostream>
 
 //--------------------------------------------------------//
 //-------------------- External Library Files ------------//
@@ -23,6 +24,7 @@ namespace GAME_ENEMIES {
 Soldier::Soldier() :
     Enemy()
 {
+    std::cout << "Instantiating Soldier." << std::endl;
     return;
 }
 

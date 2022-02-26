@@ -42,7 +42,7 @@ namespace GAME_ENEMIES
 
             SuperMonster (SuperMonster && other);   // copy-move constructor
 
-            ~SuperMonster ()=0;  // destructor
+            virtual ~SuperMonster ();  // destructor
 
             // ====================  ACCESSORS     =======================================
 

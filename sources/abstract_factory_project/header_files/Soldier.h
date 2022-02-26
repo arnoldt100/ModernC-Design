@@ -14,7 +14,6 @@
 //--------------------------------------------------------//
 //--------------------- Package includes -----------------//
 //--------------------------------------------------------//
-#include "MPLAliases.hpp"
 #include "enemy.h"
 
 namespace GAME_ENEMIES
@@ -44,7 +43,7 @@ namespace GAME_ENEMIES
 
             Soldier (Soldier && other);   // copy-move constructor
 
-            ~Soldier();  // destructor
+            virtual ~Soldier();  // destructor
 
             // ====================  ACCESSORS     =======================================
 
