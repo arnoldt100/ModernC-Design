@@ -60,7 +60,8 @@
     #                                                    -
     #-----------------------------------------------------
     set (generalized_functors_header_files
-         header_files/main.h )
+         header_files/main.h 
+         header_files/Functor.hpp)
 
     #-----------------------------------------------------
     # Here we define the variable                        -
@@ -70,7 +71,8 @@
     #                                                    -
     #-----------------------------------------------------
     set (generalized_functors_implementation_files
-         implementation_files/main.cpp )
+         implementation_files/main.cpp
+         implementation_files/Functor.cpp )
 
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 #                                                                 @
