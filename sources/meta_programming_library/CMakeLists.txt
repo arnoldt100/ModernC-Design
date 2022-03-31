@@ -64,7 +64,8 @@
          header_files/OpNewFactoryUnit.hpp
          header_files/AbstractFactoryUnit.hpp
          header_files/AbstractFactory.hpp
-         header_files/GenerateScatteredHierarchy.hpp)
+         header_files/GenerateScatteredHierarchy.hpp
+         header_files/GenerateLinearHierarchy.hpp )
 
     #-----------------------------------------------------
     # Here we define the variable                        -
@@ -84,7 +85,8 @@
          implementation_files/OpNewFactoryUnit.cpp
          implementation_files/AbstractFactoryUnit.cpp
          implementation_files/AbstractFactory.cpp
-         implementation_files/GenerateScatteredHierarchy.cpp)
+         implementation_files/GenerateScatteredHierarchy.cpp
+         implementation_files/GenerateLinearHierarchy.cpp)
 
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 #                                                                 @

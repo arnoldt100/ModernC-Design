@@ -9,7 +9,6 @@
 #include <iostream>
 #include <typeinfo>
 
-
 //--------------------------------------------------------//
 //-------------------- External Library Files ------------//
 //--------------------------------------------------------//
@@ -75,13 +74,13 @@ namespace MPL
             }
 
             // ====================  ACCESSORS     =======================================
+
+            // ====================  MUTATORS      =======================================
             ConcreteProduct* DoCreate(mpl_type2type<AbstractProduct>)
             {
             	std::cout << "Creating product " << typeid(mpl_type2type<ConcreteProduct>).name() << std::endl;
                 return new ConcreteProduct;
             }
-
-            // ====================  MUTATORS      =======================================
 
             // ====================  OPERATORS     =======================================
 
