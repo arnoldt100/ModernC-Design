@@ -90,3 +90,4 @@ verify_key_mpl_environmental_variables_set()
 #-----------------------------------------------------
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/meta_programming_library)
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/abstract_factory_project)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/generalized_functors)
