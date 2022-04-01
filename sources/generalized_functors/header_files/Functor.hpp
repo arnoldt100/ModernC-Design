@@ -4,6 +4,7 @@
 //--------------------------------------------------------//
 //-------------------- System includes -------------------//
 //--------------------------------------------------------//
+#include <memory>
 
 //--------------------------------------------------------//
 //-------------------- External Library Files ------------//
@@ -12,7 +13,7 @@
 //--------------------------------------------------------//
 //--------------------- Package includes -----------------//
 //--------------------------------------------------------//
-#include "MPLAliases.hpp"
+#include "FunctorImpl.hpp"
 
 namespace MPL
 {
@@ -21,9 +22,12 @@ namespace MPL
 //        Class:  Functor
 //  Description:  
 //  =====================================================================================
-template<typename Result, typename TypeList >
+template<typename Result, class... Types >
 class Functor
 {
+    private: 
+        using Impl = GeneralizedFunctorImpl<Result,Types...>;
+
     public:
         // ====================  LIFECYCLE     =======================================
 
@@ -48,6 +52,11 @@ class Functor
                 
             }
             return;
+        }
+
+        explicit Functor(std::unique_ptr<Impl> spImpl)
+        {
+            this->spImpl_ = std::move(spImpl);
         }
 
         Functor (Functor && other)   // copy-move constructor
@@ -88,15 +97,24 @@ class Functor
             return *this;
         }
 
+        Result operator()( Types... args)
+        {
+            return (*spImpl_)( args... );
+        }
+
     protected:
+
         // ====================  METHODS       =======================================
 
         // ====================  DATA MEMBERS  =======================================
 
     private:
+        // ====================  Alases        =======================================
+
         // ====================  METHODS       =======================================
 
         // ====================  DATA MEMBERS  =======================================
+        std::unique_ptr<Impl> spImpl_;
 
 }; // -----  end of class Functor  -----
 
