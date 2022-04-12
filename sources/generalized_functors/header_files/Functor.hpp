@@ -59,6 +59,12 @@ class Functor
             this->spImpl_ = std::move(spImpl);
         }
 
+        template <class Fun>
+        Functor(const Fun& fun)
+        {
+            return;
+        }
+
         Functor (Functor && other)   // copy-move constructor
         {
             if ( this != &other )
