@@ -1,5 +1,5 @@
-#ifndef  MOUSEION_Visitor_INC
-#define  MOUSEION_Visitor_INC
+#ifndef  MOUSEION_BaseVisitable_INC
+#define  MOUSEION_BaseVisitable_INC
 
 
 //--------------------------------------------------------//
@@ -18,65 +18,63 @@ namespace MPL
 {
 
 // =====================================================================================
-//        Class:  Visitor
+//        Class:  BaseVisitable
 //  Description:  
 //  =====================================================================================
-template <class T, typename R = void>
-class Visitor
+class BaseVisitable
 {
     public:
-        // ====================  USING ALIASES =======================================
-        using ReturnType = R;
-
         // ====================  LIFECYCLE     =======================================
 
         //--------------------------------------------------------------------------------------
-        //       Class:  Visitor
-        //      Method:  Visitor :: Visitor
+        //       Class:  BaseVisitable
+        //      Method:  BaseVisitable :: BaseVisitable
         // Description:  
         // 
         //  Parameters: 
         //
         //      Return:
         //--------------------------------------------------------------------------------------
-        Visitor ()   // constructor
+        BaseVisitable ()   // constructor
         {
             return;
         }
 
-        Visitor (const Visitor & other) // copy constructor
+        BaseVisitable (const BaseVisitable & other) // copy constructor
         {
             return;
         }
 
-        Visitor (Visitor && other)   // copy-move constructor
+        BaseVisitable (BaseVisitable && other) // copy-move constructor
         {
             return;
         }
 
-        virtual ~Visitor ()= 0;  // destructor
+        virtual ~BaseVisitable ()  // destructor
+        {
+            return;
+        }
 
         // ====================  ACCESSORS     =======================================
-        virtual ReturnType visit(T&) const = 0;
 
         // ====================  MUTATORS      =======================================
 
         // ====================  OPERATORS     =======================================
 
-        Visitor& operator= ( const Visitor &other ) // assignment operator
+        BaseVisitable& operator= ( const BaseVisitable &other ) // assignment operator
         {
             if (this != &other)
             {
-
+        
             }
             return *this;
         }
 
-        Visitor& operator= ( Visitor && other ) // assignment-move operator
+        BaseVisitable& operator= ( BaseVisitable && other ) // assignment-move operator
         {
             if (this != &other)
             {
-
+        
             }
             return *this;
         }
@@ -91,14 +89,9 @@ class Visitor
 
         // ====================  DATA MEMBERS  =======================================
 
-}; // -----  end of class Visitor  -----
+}; // -----  end of class BaseVisitable  -----
 
-template <class T, typename R>
-Visitor<T,R>::~Visitor () // destructor
-{
-    return;
-}
 
 }; // namespace MPL
 
-#endif   // ----- #ifndef MOUSEION_Visitor_INC  ----- 
+#endif   // ----- #ifndef MOUSEION_BaseVisitable_INC  ----- 
