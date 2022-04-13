@@ -61,6 +61,7 @@
     #-----------------------------------------------------
     set (generalized_functors_header_files
          header_files/BaseVisitor.h
+         header_files/Visitor.hpp
          header_files/main.h )
 
     #-----------------------------------------------------
@@ -72,6 +73,7 @@
     #-----------------------------------------------------
     set (generalized_functors_implementation_files
          implementation_files/BaseVisitor.cpp
+         implementation_files/Visitor.cpp
          implementation_files/main.cpp )
 
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
