@@ -13,6 +13,8 @@
 //--------------------------------------------------------//
 //--------------------- Package includes -----------------//
 //--------------------------------------------------------//
+#include "BaseVisitor.h"
+#include "Visitor.hpp"
 
 namespace MPL
 {
@@ -21,9 +23,13 @@ namespace MPL
 //        Class:  BaseVisitable
 //  Description:  
 //  =====================================================================================
+template<typename R = void>
 class BaseVisitable
 {
     public:
+        // ====================  USING ALIASES =======================================
+        using ReturnType = R;
+
         // ====================  LIFECYCLE     =======================================
 
         //--------------------------------------------------------------------------------------
@@ -56,6 +62,7 @@ class BaseVisitable
         }
 
         // ====================  ACCESSORS     =======================================
+        virtual R Accept(BaseVisitable& ) = 0;
 
         // ====================  MUTATORS      =======================================
 
@@ -81,6 +88,15 @@ class BaseVisitable
 
     protected:
         // ====================  METHODS       =======================================
+        template<class T>
+        static ReturnType AcceptImpl(T& visited, BaseVisitor& guest)
+        {
+            if ( Visitor<T,R>* p = dynamic_cast<Visitor<T,R>*>(&guest) )
+            {
+                return p->Visit(visited);
+            }
+            return ReturnType();
+        }
 
         // ====================  DATA MEMBERS  =======================================
 
