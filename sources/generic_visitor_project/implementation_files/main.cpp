@@ -2,7 +2,9 @@
 
 int main(int argc, char** argv)
 {
-    std::cout << "Start of executing main program." << std::endl;
-    std::cout << "End of executing main program." << std::endl;
+    MyConcreteVisitor visitor;
+    Paragraph par;
+    DocElement* d = &par;
+    d->Accept(visitor);
     return 0;
 }
