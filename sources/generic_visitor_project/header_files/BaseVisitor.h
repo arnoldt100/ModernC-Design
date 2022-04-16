@@ -41,7 +41,7 @@ class BaseVisitor
 
         BaseVisitor (BaseVisitor && other);   // copy-move constructor
 
-        virtual ~BaseVisitor ();  // destructor
+        virtual ~BaseVisitor ()=0;  // destructor
 
         // ====================  ACCESSORS     =======================================
 

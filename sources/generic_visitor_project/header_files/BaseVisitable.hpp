@@ -56,10 +56,7 @@ class BaseVisitable
             return;
         }
 
-        virtual ~BaseVisitable ()  // destructor
-        {
-            return;
-        }
+        virtual ~BaseVisitable ()=0;  // destructor
 
         // ====================  ACCESSORS     =======================================
         virtual R Accept(BaseVisitor& ) = 0;
@@ -107,6 +104,11 @@ class BaseVisitable
 
 }; // -----  end of class BaseVisitable  -----
 
+template<typename R>
+BaseVisitable<R>::~BaseVisitable ()  // destructor
+{
+    return;
+}
 
 }; // namespace MPL
 
