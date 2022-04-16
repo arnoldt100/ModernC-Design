@@ -1,10 +1,10 @@
 # This CMakeLists.txt file creates the library lib__library__.a
 # and its unit tests. To add source files, simply append the appropiate variable
-# generalized_functors_header_files or generalized_functors_implementation_files.
+# generic_visitor_header_files or generic_visitor_implementation_files.
 #
-# The target for the library is generalized_functors.
+# The target for the library is generic_visitor.
 #
-# The following properties are set for the target generalized_functors.
+# The following properties are set for the target generic_visitor.
 #
 #   Property                            Value                                               Description
 #----------------------------------------------------------------------------------------------------------------------------
@@ -21,7 +21,7 @@
     # Define the project.                                -
     #                                                    -
     #-----------------------------------------------------
-    set(my_project_name "generalized_functors")
+    set(my_project_name "generic_visitor")
     project(${my_project_name})
 
     #-----------------------------------------------------
@@ -59,7 +59,7 @@
     # this variable.                                     -
     #                                                    -
     #-----------------------------------------------------
-    set (generalized_functors_header_files
+    set (generic_visitor_header_files
          header_files/BaseVisitor.h
          header_files/BaseVisitable.hpp
          header_files/Visitor.hpp
@@ -73,7 +73,7 @@
     # variable.                                          -
     #                                                    -
     #-----------------------------------------------------
-    set (generalized_functors_implementation_files
+    set (generic_visitor_implementation_files
          implementation_files/BaseVisitor.cpp
          implementation_files/BaseVisitable.cpp
          implementation_files/Visitor.cpp
@@ -104,7 +104,7 @@ add_dependencies(${target}
 #                                                    -
 #-----------------------------------------------------
 target_sources(${target}
-    PRIVATE ${generalized_functors_header_files} ${generalized_functors_implementation_files} )
+    PRIVATE ${generic_visitor_header_files} ${generic_visitor_implementation_files} )
 
 #-----------------------------------------------------
 # Add the directory header_files to search for       -
@@ -129,8 +129,8 @@ enable_compile_warnings(${target})
 #                                                    -
 #-----------------------------------------------------
 set_target_properties(${target} PROPERTIES
-                      generalized_functors_include ${CMAKE_CURRENT_SOURCE_DIR}/header_files
-                      PUBLIC_HEADER "${generalized_functors_header_files}" )
+                      generic_visitor_include ${CMAKE_CURRENT_SOURCE_DIR}/header_files
+                      PUBLIC_HEADER "${generic_visitor_header_files}" )
 
 install( TARGETS ${target}
          RUNTIME DESTINATION ${bin_install_dir} )
