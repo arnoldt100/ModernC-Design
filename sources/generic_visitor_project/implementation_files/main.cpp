@@ -5,7 +5,7 @@ int main(int argc, char** argv)
 
     MyConcreteVisitor visitor;
 
-    DocElement* d = new Footnote;
+    DocElement* d = new Index;
     d->Accept(visitor);
 
     if (d != nullptr)

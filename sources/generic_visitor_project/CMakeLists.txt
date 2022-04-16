@@ -64,6 +64,7 @@
          header_files/BaseVisitable.hpp
          header_files/Visitor.hpp
          header_files/DefineVisitableMacro.h 
+         header_files/DefaultCatchAll.hpp
          header_files/main.h )
 
     #-----------------------------------------------------
@@ -78,6 +79,7 @@
          implementation_files/BaseVisitable.cpp
          implementation_files/Visitor.cpp
          implementation_files/DefineVisitableMacro.cpp
+         implementation_files/DefaultCatchAll.cpp
          implementation_files/main.cpp )
 
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

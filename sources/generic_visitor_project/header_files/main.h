@@ -39,6 +39,20 @@ class Footnote : public DocElement
 
     protected:
 };
+
+class Index : public DocElement
+{
+    public:
+        void who_am_i() const
+        {
+            std::cout << "I'm a Index DocElement.";
+        }
+
+        DEFINE_VISITABLE()
+
+    protected:
+};
+
 class MyConcreteVisitor:
     public MPL::BaseVisitor,
     public MPL::Visitor<DocElement>,

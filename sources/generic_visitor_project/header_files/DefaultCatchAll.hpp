@@ -1,10 +1,11 @@
-#ifndef  MOUSEION_BaseVisitable_INC
-#define  MOUSEION_BaseVisitable_INC
+#ifndef  MOUSEION_DefaultCatchAll_INC
+#define  MOUSEION_DefaultCatchAll_INC
 
 
 //--------------------------------------------------------//
 //-------------------- System includes -------------------//
 //--------------------------------------------------------//
+#include <iostream>
 
 //--------------------------------------------------------//
 //-------------------- External Library Files ------------//
@@ -13,89 +14,89 @@
 //--------------------------------------------------------//
 //--------------------- Package includes -----------------//
 //--------------------------------------------------------//
-#include "DefaultCatchAll.hpp"
-#include "BaseVisitor.h"
-#include "Visitor.hpp"
+
 
 namespace MPL
 {
 
+//--------------------------------------------------------//
+//-------------------- Forward Declarations --------------//
+//--------------------------------------------------------//
+class BaseVisitor;
+
 // =====================================================================================
-//        Class:  BaseVisitable
+//        Class:  DefaultCatchAll
 //  Description:  
 //  =====================================================================================
-template<typename R = void,
-         template <typename, class> class CatchAll = DefaultCatchAll >
-class BaseVisitable
+template<class R, class Visited>
+class DefaultCatchAll
 {
     public:
-        // ====================  USING ALIASES =======================================
-        using ReturnType = R;
-
         // ====================  LIFECYCLE     =======================================
 
         //--------------------------------------------------------------------------------------
-        //       Class:  BaseVisitable
-        //      Method:  BaseVisitable :: BaseVisitable
+        //       Class:  DefaultCatchAll
+        //      Method:  DefaultCatchAll :: DefaultCatchAll
         // Description:  
         // 
         //  Parameters: 
         //
         //      Return:
         //--------------------------------------------------------------------------------------
-        BaseVisitable ()   // constructor
+        DefaultCatchAll ()   // constructor
         {
             return;
         }
 
-        BaseVisitable (const BaseVisitable & other) // copy constructor
+        DefaultCatchAll (const DefaultCatchAll & other)   // copy constructor
+        {
+            return;
+        }		// -----  end of method DefaultCatchAll::DefaultCatchAll  -----
+
+        DefaultCatchAll (DefaultCatchAll && other)   // copy-move constructor
+        {
+            return;
+        }		// -----  end of method DefaultCatchAll::DefaultCatchAll  -----
+
+
+        virtual ~DefaultCatchAll ()  // destructor
         {
             return;
         }
-
-        BaseVisitable (BaseVisitable && other) // copy-move constructor
-        {
-            return;
-        }
-
-        virtual ~BaseVisitable ()=0;  // destructor
 
         // ====================  ACCESSORS     =======================================
-        virtual R Accept(BaseVisitor& ) = 0;
 
         // ====================  MUTATORS      =======================================
 
         // ====================  OPERATORS     =======================================
 
-        BaseVisitable& operator= ( const BaseVisitable &other ) // assignment operator
+        DefaultCatchAll& operator= ( const DefaultCatchAll &other ) // assignment operator
         {
             if (this != &other)
             {
         
             }
             return *this;
-        }
+        } // assignment operator
 
-        BaseVisitable& operator= ( BaseVisitable && other ) // assignment-move operator
+        DefaultCatchAll& operator= ( DefaultCatchAll && other ) // assignment-move operator
         {
             if (this != &other)
             {
         
             }
             return *this;
+        } // assignment operator
+
+        // ====================  STATIC        =======================================
+        static R OnUnknownVisitor(Visited& v , BaseVisitor& bv )
+        {
+            std::cout << "I'm an unknown visitor: ";
+            return R();
         }
 
     protected:
         // ====================  METHODS       =======================================
-        template<class T>
-        static ReturnType AcceptImpl(T& visited, BaseVisitor& guest)
-        {
-            if ( Visitor<T,R>* p = dynamic_cast<Visitor<T,R>*>(&guest) )
-            {
-                return p->visit(visited);
-            }
-            return CatchAll<R,T>::OnUnknownVisitor(visited,guest);
-        }
 
         // ====================  DATA MEMBERS  =======================================
 
@@ -104,16 +105,9 @@ class BaseVisitable
 
         // ====================  DATA MEMBERS  =======================================
 
-}; // -----  end of class BaseVisitable  -----
+}; // -----  end of class DefaultCatchAll  -----
 
-template<typename R,
-         template <typename, class> class CatchAll
-         >
-BaseVisitable<R,CatchAll>::~BaseVisitable ()  // destructor
-{
-    return;
-}
 
 }; // namespace MPL
 
-#endif   // ----- #ifndef MOUSEION_BaseVisitable_INC  ----- 
+#endif   // ----- #ifndef MOUSEION_DefaultCatchAll_INC  ----- 
