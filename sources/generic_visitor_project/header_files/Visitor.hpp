@@ -54,7 +54,7 @@ class Visitor
             return;
         }
 
-        virtual ~Visitor ()= 0;  // destructor
+        virtual ~Visitor () = 0;  // destructor
 
         // ====================  ACCESSORS     =======================================
         virtual ReturnType visit(T&) const = 0;

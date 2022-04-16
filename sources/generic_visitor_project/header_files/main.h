@@ -1,11 +1,11 @@
 #ifndef  main_INC
 #define  main_INC
 
-#include "DefineVistableMacro.h"
+#include "DefineVisitableMacro.h"
 #include "BaseVisitable.hpp"
 #include <iostream>
 
-class DocElement : public BaseVistable<>
+class DocElement : public MPL::BaseVisitable<>
 {
     public:
         DEFINE_VISITABLE()
@@ -18,20 +18,20 @@ class Paragraph : public DocElement
 };
 
 class MyConcreteVisitor:
-    public BaseVisitor,
-    public Visitor<DocElement>,
-    public Visitor<Paragraph>
+    public MPL::BaseVisitor,
+    public MPL::Visitor<DocElement>,
+    public MPL::Visitor<Paragraph>
 {
     public:
-        void Visit(DocElement&)
+        void visit(DocElement&) const
         {
             std::cout << "Visit(DocElement&) " << std::endl;
         }
 
-        void Visit(Paragraph&)
+        void visit(Paragraph&) const
         {
             std::cout << "Visit(Paragraph&) " << std::endl;
         }
-}
+};
 
 #endif   // ----- #ifndef main_INC  ----- 

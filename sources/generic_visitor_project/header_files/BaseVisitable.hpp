@@ -62,7 +62,7 @@ class BaseVisitable
         }
 
         // ====================  ACCESSORS     =======================================
-        virtual R Accept(BaseVisitable& ) = 0;
+        virtual R Accept(BaseVisitor& ) = 0;
 
         // ====================  MUTATORS      =======================================
 
@@ -93,7 +93,7 @@ class BaseVisitable
         {
             if ( Visitor<T,R>* p = dynamic_cast<Visitor<T,R>*>(&guest) )
             {
-                return p->Visit(visited);
+                return p->visit(visited);
             }
             return ReturnType();
         }
