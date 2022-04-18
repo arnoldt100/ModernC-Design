@@ -14,7 +14,7 @@
 //--------------------------------------------------------//
 //--------------------- Package includes -----------------//
 //--------------------------------------------------------//
-
+#include "ErrorUnknownVisitor.h"
 
 namespace MPL
 {
@@ -91,7 +91,8 @@ class DefaultCatchAll
         // ====================  STATIC        =======================================
         static R OnUnknownVisitor(Visited& v , BaseVisitor& bv )
         {
-            std::cout << "I'm an unknown visitor: ";
+            std::cout << "I'm an unknown visitor: " << std::endl << std::flush;
+            throw ErrorUnknownVisitor();
             return R();
         }
 
